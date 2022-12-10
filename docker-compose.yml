@@ -1,0 +1,22 @@
+version: '3.7'
+services: 
+    docker-fastapi:
+        container_name: docker-fastapi
+        build: 
+            context: ./app/
+            dockerfile: Dockerfile
+        ports: 
+            - "5000:5000"
+        restart: always
+    frontend:
+        stdin_open: true
+        depends_on: 
+            - docker-fastapi
+        container_name: proxy-app
+        build: 
+            context: ./ui/
+            dockerfile: Dockerfile
+        ports: 
+            - "3000:3000"
+        restart: always
+        
