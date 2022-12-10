@@ -26,7 +26,7 @@ function Header({searchweather,getFav,clearFav}) {
               <li className="nav-item">              </li>
               <li className="nav-item">              </li>
             </ul>
-            {/* <form className="form-inline my-2 my-lg-0" _lpchecked={1}>         */}
+            <form className="form-inline my-2 my-lg-0" _lpchecked={1}>        
                 <input value={postcode} className="form-control mr-sm-2" type="text" maxLength={5} placeholder="Zip Code" aria-label="Zip Code" onChange={
                   (e)=>{
                   if(e.target.value.length>0){
@@ -39,7 +39,7 @@ function Header({searchweather,getFav,clearFav}) {
                   setPostcode(e.target.value)}} 
                   /> 
                   <button className="btn btn-outline-success my-2 my-sm-0" type="button" onClick={get_city_weatcher}>Search</button>  
-            {/* </form> */}
+            </form>
           </div>
         </nav>
       </div>
